@@ -31,28 +31,17 @@ Python dependencies:
 
 ## Installation
 
-Place both scripts and this README in the same folder. Open PowerShell in that folder and install the dependencies:
+# Clone the repository and open its folder.
+git clone https://github.com/nicolfamilyfarm/bunnings-powerpass-receipts.git
+cd bunnings-powerpass-receipts
 
-```powershell
-py -m pip install playwright "pypdf"
-```
-
-The downloader uses the installed Microsoft Edge browser through Playwright's `msedge` channel. It does not use the bundled Chromium browser, so `playwright install chromium` is unnecessary for this setup.
-
-For an isolated Python environment, you can instead use:
-
-```powershell
-py -m venv .venv
-.\.venv\Scripts\python.exe -m pip install playwright "pypdf"
-```
-
-With this approach, replace `py` in the commands below with `.\.venv\Scripts\python.exe`.
+# Install the Python dependencies.
+py -m pip install playwright "pypdf>=5,<7"
 
 ## Download receipts
 
-```powershell
-py powerpass_receipts.py --start-year 2022
-```
+# Download receipts for a sample date range: 1 January–31 December 2025.
+py powerpass_receipts.py --start-year 2025 --end-date 2025-12-31
 
 1. The script opens a visible Edge window at the PowerPass login page.
 2. Log in normally, including any authentication steps requested by PowerPass.
@@ -61,6 +50,9 @@ py powerpass_receipts.py --start-year 2022
 5. Leave the script's browser window open while it downloads.
 
 The script uses a separate persistent browser profile in `powerpass-browser-profile/`. It does not attach to your everyday Edge window. Later runs can reuse the saved login while the session remains valid. You still need to open Transactions and press Enter on each run.
+   
+# Convert the downloaded PDFs into matching Markdown files.
+py powerpass_pdf_to_md.py
 
 ### What the downloader does
 
@@ -87,19 +79,6 @@ The script assumes **fewer than 500 transactions per calendar year**. PowerPass 
 | `--profile` | `powerpass-browser-profile/` beside the script | Dedicated Edge profile folder. |
 | `--download-timeout` | `180` | Maximum wait for a PDF response, in seconds. Other UI actions have separate timeouts. |
 
-Examples:
-
-```powershell
-# Download a specific period.
-py powerpass_receipts.py --start-year 2022 --end-date 2025-12-31
-
-# Save to another folder.
-py powerpass_receipts.py --start-year 2022 --output "D:\Bunnings Receipts"
-
-# Allow more time for report generation.
-py powerpass_receipts.py --start-year 2022 --download-timeout 300
-```
-
 ### Resume an interrupted download
 
 Rerun the same command. The script reads `progress.json`, revisits the result pages, and skips recorded batches whose PDFs still pass its basic validation. Keep the progress file with the PDFs.
@@ -109,7 +88,6 @@ To avoid revisiting earlier years, start at the year where it stopped:
 ```powershell
 py powerpass_receipts.py --start-year 2024
 ```
-
 Completed pages within that year are still skipped. Changing the cutoff date or the transactions returned by the portal can create new batches; older PDFs are retained.
 
 **Use a separate output folder for each PowerPass account.** The progress keys identify date ranges and transaction batches; they do not include an account identifier.
