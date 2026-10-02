@@ -13,7 +13,7 @@ This project gives you a script that uses Playwright to automate that process. T
 | `powerpass_receipts.py` | Downloads receipt batches as PDFs from the Australian PowerPass portal. |
 | `powerpass_pdf_to_md.py` | Converts each downloaded PDF into a matching Markdown file. |
 
-Both scripts run locally without GPT, an OpenAI API key, or a paid service. The downloader connects to PowerPass through a visible browser; the converter runs offline.
+The downloader connects to PowerPass through a visible browser; the converter runs offline.
 
 ## Requirements
 
@@ -34,7 +34,7 @@ Python dependencies:
 Place both scripts and this README in the same folder. Open PowerShell in that folder and install the dependencies:
 
 ```powershell
-py -m pip install playwright "pypdf>=5,<7"
+py -m pip install playwright "pypdf"
 ```
 
 The downloader uses the installed Microsoft Edge browser through Playwright's `msedge` channel. It does not use the bundled Chromium browser, so `playwright install chromium` is unnecessary for this setup.
@@ -43,7 +43,7 @@ For an isolated Python environment, you can instead use:
 
 ```powershell
 py -m venv .venv
-.\.venv\Scripts\python.exe -m pip install playwright "pypdf>=5,<7"
+.\.venv\Scripts\python.exe -m pip install playwright "pypdf"
 ```
 
 With this approach, replace `py` in the commands below with `.\.venv\Scripts\python.exe`.
