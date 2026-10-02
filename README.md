@@ -1,14 +1,12 @@
 ﻿# PowerPass Receipt Tools
 
-If you regularly purchase items from Bunnings, and have a Powerpass card, you can download your reciepts from the Bunnings PowerPass website.
+If you regularly purchase items from Bunnings and have a PowerPass card, you can download your receipts from the Bunnings PowerPass website.
 
-The website only allows you to download one year at a time, and breaks the reciepts into 20 reciepts pages.
+The website only allows you to download one year at a time and breaks the receipts into pages of 20 receipts.
 
-So, if you have 10 years of reciepts, and 100 reciepts per year, you are looking at selecting 10 year ranges, then paging through
-5 pages of reciepts per year (or 50 pages).
+So, if you have 10 years of receipts and 100 receipts per year, you are looking at selecting 10 year ranges, then paging through 5 pages of receipts per year (or 50 pages).
 
-This project gives you a script uses Playwrite to automate that process, there is also a script that will convert the downloaded PDFs to markdown so that
-you can zip them an upload them into AI programs like ChatGPT for analysis ("List what Ryobi tools I have puschased and how much I have spent in total").
+This project gives you a script that uses Playwright to automate that process. There is also a script that will convert the downloaded PDFs to Markdown so that you can zip them and upload them into AI programs like ChatGPT for analysis (for example, *“List what Ryobi tools I have purchased and how much I have spent in total”*).
 
 | Script | Purpose |
 | --- | --- |
