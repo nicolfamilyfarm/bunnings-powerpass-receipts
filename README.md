@@ -61,7 +61,10 @@ py powerpass_receipts.py --start-year 2025 --end-date 2025-12-31
 The script uses a separate persistent browser profile in `powerpass-browser-profile/`. It does not attach to your everyday Edge window. Later runs can reuse the saved login while the session remains valid. You still need to open Transactions and press Enter on each run.
    
 # Convert the downloaded PDFs into matching Markdown files.
+
+```powershell
 py powerpass_pdf_to_md.py
+```
 
 ### What the downloader does
 
