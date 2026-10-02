@@ -203,8 +203,7 @@ If you choose custom output or profile folders inside the repository, add those 
 
 ## Scope
 
-
 These are independent tools for the Australian Bunnings PowerPass portal and are not affiliated with Bunnings. They use your normal authenticated access and require manual login. Changes to the portal's controls, pagination, or PDF delivery may require script updates.
-#   b u n n i n g s - p o w e r p a s s - r e c e i p t s 
+
  
  
