@@ -27,9 +27,7 @@ Python dependencies:
 | Package | Used by | Purpose |
 | --- | --- | --- |
 | `playwright` | Downloader | Controls Edge, reads results pages, and captures authenticated PDF responses. |
-| `pypdf>=5,<7` | Converter | Extracts embedded text from receipt PDFs. |
-
-Everything else used by the scripts is part of Python's standard library. OCR software is not included or required for PowerPass PDFs with embedded text.
+| `pypdf` | Converter | Extracts embedded text from receipt PDFs. |
 
 ## Installation
 
