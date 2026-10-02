@@ -29,16 +29,16 @@ Python dependencies:
 | `playwright` | Downloader | Controls Edge, reads results pages, and captures authenticated PDF responses. |
 | `pypdf` | Converter | Extracts embedded text from receipt PDFs. |
 
-# Installation
+## Installation
 
-## Clone the repository and open its folder.
+### Clone the repository and open its folder.
 
 ```powershell
 git clone https://github.com/nicolfamilyfarm/bunnings-powerpass-receipts.git
 cd bunnings-powerpass-receipts
 ```
 
-## Install the Python dependencies.
+### Install the Python dependencies.
 
 ```powershell
 py -m pip install playwright "pypdf"
@@ -46,7 +46,7 @@ py -m pip install playwright "pypdf"
 
 ## Download receipts
 
-# Download receipts for a sample date range: 1 January–31 December 2025.
+### Download receipts for a sample date range: 1 January–31 December 2025.
 
 ```powershell
 py powerpass_receipts.py --start-year 2025 --end-date 2025-12-31
